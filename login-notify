@@ -1,0 +1,9 @@
+#!/bin/bash
+PATH=/bin:/usr/bin
+token='YOUR_TELEGRAM_TOKEN'
+chat=YOUR_CHAT_ID
+subj="$PAM_TYPE  on   'BODY OF YOU MESSAGE ' "
+message="Service: $PAM_SERVICE. Login {$PAM_USER} from ${PAM_RHOST} - `date`"
+/usr/bin/curl  --header 'Content-Type:application/json' --request 'POST' --data "{\"chat_id\":\"${chat}\",\"text\":\"${subj}\n${message}\"}" "https://api.telegram.org/bot${token}/sendMessage" 
+
+
