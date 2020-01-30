@@ -13,7 +13,10 @@ Edit config  /etc/pam.d/sshd , Add this line here:
 
         session    optional     pam_exec.so  /bin/login-notify
 
-Do not forget to give the right to execute the script file.
-Restart ssh service
+Do not forget to give the right to execute the script file. 
+        sudo chmod +x /bin/login-notify
 
+Restart ssh service
+        sudo systemctl restart ssh
+        
 If you do not have an ssh connection, then you need to register this line in /etc/pam.d/login
