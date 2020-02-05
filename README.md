@@ -22,3 +22,5 @@ Restart ssh service
         sudo systemctl restart ssh
         
 If you do not have an ssh connection, then you need to register this line in /etc/pam.d/login
+
+To API telegram connected with  curl. - the package must be installed
